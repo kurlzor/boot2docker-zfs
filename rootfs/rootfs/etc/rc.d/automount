@@ -94,7 +94,7 @@ if [ ! -n "$EXISTING_POOL" ]; then # if there is no pool
     #     BOOT2DOCKER_DATA=`blkid | grep -e 'TYPE="btrfs"'  -e 'TYPE="ext4"' | head -n 1 | sed 's/:.*//'`
     fi
 else
-	zpool import $POOLNAME
+	zpool import -f $POOLNAME
 fi
 
 # Make sure /tmp is on the disk too too
